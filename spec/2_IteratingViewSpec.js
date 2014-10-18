@@ -14,8 +14,10 @@ describe("IteratingView", function() {
 
   it("it shows each item", function() {
     this.$rootScope.$digest();
-    expect(this.element.children()[0].innerText.trim()).toEqual('celery');
-    expect(this.element.children()[1].innerText.trim()).toEqual('peanut butter');
-    expect(this.element.children()[2].innerText.trim()).toEqual('raisins');
+    var $items = $(this.element).find('.item');
+    expect($items.eq(0).text().trim()).toEqual('celery');
+    expect($items.eq(1).text().trim()).toEqual('peanut butter');
+    expect($items.eq(2).text().trim()).toEqual('raisins');
+    expect($items.length).toBe(3);
   });
 });

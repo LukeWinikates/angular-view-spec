@@ -12,12 +12,11 @@ describe("ClickHandlerView", function() {
       this.html = this.$templateCache.get("ClickHandlerView.html");
       this.element = this.$compile(this.html)(this.$rootScope);
       this.$rootScope.$digest();
-      this.element.children()[0].click()
+      $(this.element).find('.click-me').click();
     });
 
     it("shows the text 'clicked!'", function() {
-      this.$rootScope.$digest();
-      expect(this.element.children()[1].innerText.trim()).toEqual('clicked!');
+      expect($(this.element).find('.clicked-feedback').text().trim()).toEqual('clicked!');
     });
   });
 });
