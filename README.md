@@ -13,9 +13,6 @@ grunt jasmine
 
 # Next:
 
-Demonstrate value of these tests with example based on behavior that
-emerges from composing directives
-
 Demonstrate dependency injection using the decorator service
 
 Discuss how testing angular apps can be easier with the test support
